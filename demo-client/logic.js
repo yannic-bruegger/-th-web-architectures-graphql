@@ -19,7 +19,7 @@ const exams = [
 
 students.forEach((student) => {
   document.querySelectorAll('#students').forEach((container) => {
-    let option = document.createElement("option");
+    const option = document.createElement('option');
     option.value = student.name;
     option.innerText = student.name;
     console.log(option)
