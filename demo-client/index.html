@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="logic.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Demo: PSSO</title>
+</head>
+<body>
+  <header>
+    <span class="title">Demo: PSSO</span>
+    <div>
+      <label>Select Student Account</label>
+      <select id="students">
+        <!-- TODO: Show list of students here -->
+        <template>
+          <option value="studentID">Sample Student</option>
+        </template>
+      </select>
+    </div>
+  </header>
+  <main>
+    <div class="section available-exams">
+      <h1>Available exams</h1>
+      <template id="exam">
+        <div class="entry">
+          <div class="name">Name</div>
+          <div class="time">Time</div>
+          <div><button>Register</button></div>
+        </div>
+      </template>
+    </div>
+    <div class="section">
+      <h1>Planned exams</h1>
+    </div>
+  </main>
+</body>
+</html>

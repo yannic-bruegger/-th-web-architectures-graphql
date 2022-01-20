@@ -1,1 +1,1 @@
-# -th-web-architectures-graphql
+# th-web-architectures-graphql

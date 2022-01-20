@@ -1,0 +1,61 @@
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 249);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(65, 65, 62);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 1em 5em;
+  background-color: rgb(212, 212, 201);
+}
+
+header .title {
+  width: 100%;
+}
+
+header label {
+  font-size: .7em;
+}
+
+main {
+  display: flex;
+  height: 100%;
+  padding: 1em 5em;
+  gap: 2em;
+}
+
+main .section {
+  width: 100%;
+}
+
+main .section:first-child {
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.2em;
+}
+
+.entry {
+  display: flex;
+  padding: 1em;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  gap: 2em;
+}
+
+.entry > *:nth-child(2) {
+  flex-grow: 1;
+  text-align: right;
+}
