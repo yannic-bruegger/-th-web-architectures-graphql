@@ -7,6 +7,10 @@ const students = [
     name : 'Jan Kollbär',
     id : '11125513'
   },
+  {
+    name : 'Wolfang Konen',
+    id : '0000000'
+  },
 ];
 
 const exams = [

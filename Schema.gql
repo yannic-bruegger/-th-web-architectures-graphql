@@ -1,0 +1,41 @@
+type Query {
+  Exam(id: ID!): Exam!
+  allExams: [Exams!]!
+
+  Student(id: ID!): Student!
+  allStudents: [Student!]!
+}
+
+type Student {
+  id: ID!
+  name: String!
+  exams: [Attendance!]!
+}
+
+enum ExamStatus {
+  PLANNED
+  CANCELED
+  DONE
+}
+
+type Exam {
+  id: ID!
+  name: String!
+  attendance: [Attendance!]!
+  status: ExamStatus!
+  time: String
+}
+
+enum AttendanceStatus {
+  SIGNED_IN
+  SIGNED_OUT
+  PASSED
+  FAILED
+}
+
+type Attendance {
+  exam: Exam!
+  student: Student!
+  status: AttendanceStatus!
+  grade: Float
+}

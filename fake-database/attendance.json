@@ -1,0 +1,12 @@
+{
+  "1": {
+    "exam": "SPV-01",
+    "student": "11125713",
+    "status": "SIGNED_IN"
+  },
+  "2": {
+    "exam": "SPV-01",
+    "student": "11125790",
+    "status": "SIGNED_IN"
+  }
+}
