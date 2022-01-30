@@ -36,14 +36,14 @@ type Student = {
 
 export const resolvers = {
   Query: {
-    Exam: (parent: any, { id }: any, context: any, info: any) => {
+    Exam: (_parent: any, { id }: any, _context: any, _info: any) => {
       // @ts-ignore Ignore DB structure
       return db.Exams[id];
     },
     allExams: () => {
       return Object.values(db.Exams);
     },
-    Student: (parent: any, { id }: any, context: any, info: any) => {
+    Student: (_parent: any, { id }: any, _context: any, _info: any) => {
       // @ts-ignore Ignore DB structure
       return db.Students[id];
     },
