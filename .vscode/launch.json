@@ -6,7 +6,7 @@
   "configurations": [
     {
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Lunch GraphQL-API",
       "type": "pwa-node",
       "program": "${workspaceFolder}/graphql-api/mod.ts",
       "cwd": "${workspaceFolder}",
@@ -14,7 +14,7 @@
       "runtimeArgs": [
         "run",
         "--inspect",
-        "--allow-all"
+        "--allow-all",
       ],
       "attachSimplePort": 9229
     }
