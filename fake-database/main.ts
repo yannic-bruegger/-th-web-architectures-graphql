@@ -15,22 +15,40 @@ export enum AttendanceStatus {
   FAILED
 }
 
-const Students = {
+export type Exam = {
+  id: number;
+  name: string;
+  time: string;
+  status: ExamStatus;
+}
+
+export type Student = {
+  id: number;
+  name: string;
+}
+export type Take = {
+  id: number;
+  student: Student;
+  exam: Exam;
+  status: AttendanceStatus;
+}
+
+const Students: { [key: number]: Student } = {
   1: { id: 1, name: 'Yannic Brügger'},
   2: { id: 2, name: 'Bene Engel'},
   3: { id: 3, name: 'Jan Koll'},
   4: { id: 4, name: 'Tim Loges'},
 };
 
-const Exams = {
+const Exams: { [key: number]: Exam } = {
   1: { id: 1, name: 'SPV mündliche Prüfung', time: '2021-01-20T12:00', status: ExamStatus.PLANNED },
   2: { id: 2, name: 'Web Tech Prüfung', time: '2021-01-25T14:00', status: ExamStatus.PLANNED },
 };
 
-const Attendances = [
-  { student: Students[1], exam: Exams[1], status: AttendanceStatus.SIGNED_IN },
-  { student: Students[2], exam: Exams[1], status: AttendanceStatus.SIGNED_IN },
-  { student: Students[3], exam: Exams[1], status: AttendanceStatus.SIGNED_IN },
-]
+const Takes: { [key: number]: Take } = {
+  1: { id: 1, student: Students[1], exam: Exams[1], status: AttendanceStatus.SIGNED_IN },
+  2: { id: 2, student: Students[2], exam: Exams[1], status: AttendanceStatus.SIGNED_IN },
+  3: { id: 3, student: Students[3], exam: Exams[1], status: AttendanceStatus.SIGNED_IN },
+};
 
-export const db = { Students, Exams, Attendances };
+export const db = { Students, Exams, Takes };
