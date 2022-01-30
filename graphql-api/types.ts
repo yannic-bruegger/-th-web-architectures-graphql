@@ -2,10 +2,10 @@ import { gql } from 'https://deno.land/x/graphql_tag@0.0.1/mod.ts'
 
 export const typeDefs = gql`
 type Query {
-  Exam(id: ID): Exam
+  Exam(id: ID): Exam!
   allExams: [Exam]!
 
-  Student(id: ID): Student
+  Student(id: ID): Student!
   allStudents: [Student]!
 }
 
