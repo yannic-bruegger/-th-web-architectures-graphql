@@ -9,7 +9,7 @@
       "name": "Lunch GraphQL-API",
       "type": "pwa-node",
       "program": "${workspaceFolder}/graphql-api/mod.ts",
-      "cwd": "${workspaceFolder}",
+      "cwd": "${workspaceFolder}/graphql-api/",
       "runtimeExecutable": "deno",
       "runtimeArgs": [
         "run",
