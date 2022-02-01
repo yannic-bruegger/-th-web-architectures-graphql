@@ -5,7 +5,6 @@ import { typeDefs } from './types.ts';
 import { resolvers } from './resolvers.ts';
 
 listenAndServe(':3000', async (req: Request) => {
-  console.log(req);
   if(req.method === 'OPTIONS') {
     return new Response('', { status: 204, headers:
       {
