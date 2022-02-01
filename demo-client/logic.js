@@ -39,7 +39,6 @@ function updateExams() {
 
   exams.forEach((exam) => {
     document.querySelectorAll('.available-exams').forEach((container) => {
-      console.log('Test');
       const template = document.querySelector('#exam');
       template.content.querySelector('.name').innerText = exam.name;
       template.content.querySelector('.time').innerText = exam.date;
@@ -49,4 +48,18 @@ function updateExams() {
   });
 }
 
+async function getStudents() {
+  const query = {query: `{students{name, id}}`};
+  const res = await fetch('http://127.0.0.1:3000/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+    body: JSON.stringify(query)
+  });
+  console.log(res);
+}
+
 updateExams();
+getStudents();
