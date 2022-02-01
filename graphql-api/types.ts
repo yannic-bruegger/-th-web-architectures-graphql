@@ -11,6 +11,13 @@ type Query {
   availableExams(studentId: ID): [Exam]!
 }
 
+enum TakeStatus {
+  SIGNED_IN
+  SIGNED_OUT
+  PASSED
+  FAILED
+}
+
 enum ExamStatus {
   PLANNED
   CANCELED
@@ -27,7 +34,7 @@ type Take {
   id: ID!
   student: Student!
   grade: Float
-  status: ExamStatus!
+  status: TakeStatus!
   exam: Exam!
 }
 

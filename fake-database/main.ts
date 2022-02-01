@@ -4,15 +4,15 @@
 // import Attendance from './attendance.json' assert { type: "json" };
 
 export enum ExamStatus {
-  PLANNED,
-  CANCELED,
-  DONE
+  PLANNED = 'PLANNED',
+  CANCELED = 'CANCELED',
+  DONE = 'DONE',
 }
 export enum AttendanceStatus {
-  SIGNED_IN,
-  SIGNED_OUT,
-  PASSED,
-  FAILED
+  SIGNED_IN = 'SIGNED_IN',
+  SIGNED_OUT = 'SIGNED_OUT',
+  PASSED = 'PASSED',
+  FAILED = 'FAILED'
 }
 
 export type Exam = {

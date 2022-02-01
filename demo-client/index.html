@@ -14,7 +14,6 @@
     <div>
       <label>Select Student Account</label>
       <select id="students">
-        <!-- TODO: Show list of students here -->
         <template>
           <option value="studentID">Sample Student</option>
         </template>
@@ -32,8 +31,15 @@
         </div>
       </template>
     </div>
-    <div class="section">
+    <div class="section taken-exams">
       <h1>Planned exams</h1>
+      <template id="exam">
+        <div class="entry">
+          <div class="name">Name</div>
+          <div class="time">Time</div>
+          <div><button>Unregister</button></div>
+        </div>
+      </template>
     </div>
   </main>
 </body>

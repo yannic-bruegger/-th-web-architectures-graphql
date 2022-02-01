@@ -48,10 +48,3 @@ export const resolvers = {
     takes: ExamTakesResolver,
   }
 }
-
-const hydrateStudent = (student: any) : Student => {
-  // @ts-ignore Ignore DB structure
-  const exams = db.Takes.filter((attendance) => attendance.student === student).map((attendance) => ({ exam: attendance.exam, status: attendance.status, grade: attendance.grade || undefined }));
-  const hydratedStudent = {...student, exams }
-  return hydratedStudent;
-}
