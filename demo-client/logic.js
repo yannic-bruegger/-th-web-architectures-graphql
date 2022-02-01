@@ -6,7 +6,7 @@ let takenExams = [];
 
 
 async function getTakenExams(studentId) {
-  const query = {query: `{Student(id: ${studentId}){takes{status, exam{name, id, date: time}}}}`};
+  const query = {query: `{Student(id: ${studentId}){takes{status, grade, exam{name, id, date: time}}}}`};
   const res = await fetch('http://127.0.0.1:3000/graphql', {
     method: 'POST',
     headers: {
@@ -42,7 +42,10 @@ function updateTakenExams() {
       const template = document.querySelector('.taken-exams #exam');
       template.content.querySelector('.name').innerText = take.exam.name;
       template.content.querySelector('.time').innerText = take.exam.date;
+      template.content.querySelector('.grade').innerText = take.grade;
+      template.content.querySelector('.status').innerText = take.status;
       const clone = document.importNode(template.content, true);
+      if(take.status === "SIGNED_IN")clone.querySelector('.unregister').addEventListener('click', async () => { await unregister(document.querySelector('#students').value ,take.exam.id)});
       container.appendChild(clone);
     });
   });
@@ -59,6 +62,7 @@ function updateAvailableExams() {
       template.content.querySelector('.name').innerText = exam.name;
       template.content.querySelector('.time').innerText = exam.date;
       const clone = document.importNode(template.content, true);
+      clone.querySelector('.register').addEventListener('click', async () => { await register(document.querySelector('#students').value ,exam.id)});
       container.appendChild(clone);
     });
   });
@@ -105,4 +109,32 @@ async function updateExams() {
   updateAvailableExams();
   await getTakenExams(document.querySelector('#students').value);
   updateTakenExams();
+}
+
+async function register(studentId, examId) {
+  const query = {query: `mutation {takeExam(studentId: "${studentId}", examId: "${examId}"){status}}`};
+  const res = await fetch('http://127.0.0.1:3000/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+    body: JSON.stringify(query)
+  });
+  console.log(await res.json());
+  updateExams();
+}
+
+async function unregister(studentId, examId) {
+  const query = {query: `mutation {unregisterExam(studentId: "${studentId}", examId: "${examId}"){status}}`};
+  const res = await fetch('http://127.0.0.1:3000/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+    body: JSON.stringify(query)
+  });
+  console.log(await res.json());
+  updateExams();
 }

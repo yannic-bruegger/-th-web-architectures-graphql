@@ -8,7 +8,7 @@ export enum ExamStatus {
   CANCELED = 'CANCELED',
   DONE = 'DONE',
 }
-export enum AttendanceStatus {
+export enum TakeStatus {
   SIGNED_IN = 'SIGNED_IN',
   SIGNED_OUT = 'SIGNED_OUT',
   PASSED = 'PASSED',
@@ -30,7 +30,7 @@ export type Take = {
   id: number;
   student: Student;
   exam: Exam;
-  status: AttendanceStatus;
+  status: TakeStatus;
 }
 
 const Students: { [key: number]: Student } = {
@@ -46,9 +46,9 @@ const Exams: { [key: number]: Exam } = {
 };
 
 const Takes: { [key: number]: Take } = {
-  1: { id: 1, student: Students[1], exam: Exams[1], status: AttendanceStatus.SIGNED_IN },
-  2: { id: 2, student: Students[2], exam: Exams[1], status: AttendanceStatus.SIGNED_IN },
-  3: { id: 3, student: Students[3], exam: Exams[1], status: AttendanceStatus.SIGNED_IN },
+  1: { id: 1, student: Students[1], exam: Exams[1], status: TakeStatus.SIGNED_IN },
+  2: { id: 2, student: Students[2], exam: Exams[1], status: TakeStatus.SIGNED_IN },
+  3: { id: 3, student: Students[3], exam: Exams[1], status: TakeStatus.SIGNED_IN },
 };
 
 export const db = { Students, Exams, Takes };

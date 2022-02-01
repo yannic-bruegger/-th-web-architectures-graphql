@@ -11,6 +11,11 @@ type Query {
   availableExams(studentId: ID): [Exam]!
 }
 
+type Mutation {
+  takeExam(studentId: ID!, examId: ID!): Take!
+  unregisterExam(studentId: ID!, examId: ID!): Take!
+}
+
 enum TakeStatus {
   SIGNED_IN
   SIGNED_OUT
