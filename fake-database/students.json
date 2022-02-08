@@ -1,6 +1,14 @@
-[
-  {
-    "name" : "Yannic Brügger",
-    "id" : "11125713"
+{
+  "BRUEGGER": {
+    "name": "Yannic Brügger"
+  },
+  "KOLL": {
+    "name": "Jan Koll"
+  },
+  "ENGEL": {
+    "name": "Bene Mac Fly"
+  },
+  "LOGES": {
+    "name": "Timothy Taylor"
   }
-]
+}

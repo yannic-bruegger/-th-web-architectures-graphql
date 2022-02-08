@@ -1,1 +1,1 @@
-deno run --allow-net --watch mod.ts
+deno run --allow-net --allow-read --allow-write --watch mod.ts
